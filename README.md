@@ -61,6 +61,76 @@ Logistic Regression Baseline
 XGBoost Classification
    ↓
 Threshold Optimization
+
+## Models
+
+### Logistic Regression
+
+Used as an interpretable baseline model for comparison.
+
+### XGBoost
+
+Used as the primary nonlinear classification model with class-imbalance handling.
+
+## Evaluation
+
+The project evaluates the model using:
+
+- Accuracy
+- Precision
+- Recall
+- F1 Score
+- ROC-AUC
+- Confusion Matrix
+- Precision-Recall Curve
+
+Recall is particularly important because missing an actual machine failure can result in unexpected downtime and maintenance costs.
+
+## Threshold Optimization
+
+Instead of relying only on the default `0.50` classification threshold, the XGBoost threshold was optimized using the precision-recall trade-off.
+
+**Optimized threshold: 0.7423**
+
+### Optimized Results
+
+| Metric | Result |
+|---|---:|
+| Precision | 82.86% |
+| Recall | 85.29% |
+| F1 Score | 84.06% |
+
+## Explainable AI
+
+SHAP is used to interpret the XGBoost model and identify which sensor variables contribute most strongly to machine-failure predictions.
+
+This improves model transparency and helps connect machine-learning predictions with potentially useful industrial insights.
+
+## Technologies
+
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- XGBoost
+- SHAP
+- Matplotlib
+- Seaborn
+- Google Colab
+- Jupyter Notebook
+- Git & GitHub
+
+## Repository Structure
+
+```text
+industrial-predictive-maintenance/
+├── README.md
+├── Industrial_Predictive_Maintenance.ipynb
+├── data/
+├── results/
+├── src/
+├── requirements.txt
+└── .gitignore
    ↓
 Model Evaluation
    ↓
